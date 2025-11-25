@@ -1,0 +1,26 @@
+1. 创建虚拟环境
+python -m venv venv
+
+2. 
+激活虚拟环境
+venv\Scripts\activate
+退出虚拟环境
+deactivate
+
+3. 本地运行 FastAPI（开发模式）
+uvicorn main:app --reload
+http://localhost:8000
+
+4. 导出依赖（生成 requirements.txt）
+pip freeze > requirements.txt
+
+5. 安装依赖（环境重建 / 部署）
+pip install -r requirements.txt
+
+6. 
+Docker 部署（树莓派 / 服务器使用）
+构建镜像（可选）
+docker build -t [镜像名] .
+运行容器
+docker run -d -p [真实端口]:[Docker端口] [镜像名]
+docker run -d --name [容器名] stock-api 
